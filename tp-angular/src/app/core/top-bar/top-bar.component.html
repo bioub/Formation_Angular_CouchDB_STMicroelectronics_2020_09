@@ -1,0 +1,14 @@
+<a routerLink="/" routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}">Home</a>
+<a routerLink="/products" routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}">Products</a>
+<a [routerLink]="['products', 'search']" routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}">Search</a>
+<a [routerLink]="'/about'" routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}">About</a>
+
+
+<!--
+  tableau : ['products', 'search']
+  objet : {exact: true}
+
+  const routerLink = ['products', 'search'];
+  const routerLink = '/products';
+
+-->
