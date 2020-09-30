@@ -1,1 +1,6 @@
-<p>products-list works!</p>
+<table>
+  <tr *ngFor="let p of products">
+    <td>{{p._id}}</td>
+    <td>{{p.name}}</td>
+  </tr>
+</table>
