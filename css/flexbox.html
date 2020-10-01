@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      st-root {
+        background: yellow;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      st-top-bar {
+        background: darkblue;
+        color: white;
+        padding: 10px;
+      }
+
+      .page {
+        background: pink;
+        flex: 1 1 100%;
+      }
+
+      st-products-list {
+        background: greenyellow;
+        height: 100%; /* not working */
+      }
+
+      ag-grid-angular {
+        background: magenta;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <st-root>
+      <st-top-bar>
+        Menu
+      </st-top-bar>
+      <div class="page">
+        <st-products-list>
+          <ag-grid-angular></ag-grid-angular>
+        </st-products-list>
+      </div>
+    </st-root>
+  </body>
+</html>

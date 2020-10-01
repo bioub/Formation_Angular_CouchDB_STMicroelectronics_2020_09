@@ -86,3 +86,21 @@ const phoneList2 = map(data, (el) => ({
 }));
 
 console.log(phoneList2);
+
+// function predicat(prenom) {
+//   return prenom.length === 4;
+// }
+
+// const prenoms = ["Jean", "Eric", "Romain"];
+// const prenoms4CharUpper2 = prenoms
+//   .filter((prenom) => prenom.length === 4)
+//   .map((prenom) => prenom.toUpperCase());
+
+
+// pile d'appels
+// ^
+// |
+// |               up   up
+// |=> - => - =>   => - =>
+// |filter       - map
+// +--------------------------------> temps

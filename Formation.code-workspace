@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "tp-angular"
+		},
+		{
+			"path": "css"
 		}
 	],
 	"settings": {}

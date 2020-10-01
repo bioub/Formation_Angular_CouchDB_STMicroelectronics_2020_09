@@ -26,6 +26,7 @@ function give3Values() {
 
 give3Values()
   .pipe(
+    // operators
     filter((prenom) => prenom.length === 4),
     map((prenom) => prenom.toUpperCase()),
   )
@@ -33,15 +34,21 @@ give3Values()
     console.log(val);
   });
 
+// Script Shell
+// give3Values | filter | map
+
 
 // saisie dans un input de formulaire
 // ----(R)--------(Ro)---(Rom)-(Roma)-------(Romai)--------(Romain)
 
 // changement de paramètres dans l'URL
-// --------(4)-------(3)--------------------------(1)---------(9)------
+// --------(dell-streak-7)-------(lg-axis)--------------------------(dell-venue)---------(dell-streak-7)------
 
 // requete HTTP
 // ---------------({_id: 'dell-streak-7', name: 'Dell Streak 7'})
+// map(...)
+// ---------------({_id: 'dell-streak-7', name: 'DELL STREAK 7'})
+
 
 // écouter le click d'un bouton
 // ---------(click)-----(click)-------------------(click)-------------

@@ -18,4 +18,10 @@ export class ProductService {
       )
       .pipe(map((data) => data.rows.map((row) => row.doc)));
   }
+
+  getDocById(id: string): Observable<Product> {
+    return this.httpClient.get<Product>(
+      'https://6a59157b-430d-4969-b802-b9c12470dafb-bluemix.cloudantnosqldb.appdomain.cloud/phones/' + id
+    );
+  }
 }

@@ -9,7 +9,9 @@ import { AboutComponent } from './core/about/about.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
 import { ProductsModule } from './products/products.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProductService } from './products/product.service';
+
 
 @NgModule({
   declarations: [
@@ -20,13 +22,13 @@ import { HttpClientModule } from '@angular/common/http';
     NotFoundComponent
   ],
   imports: [
-    HttpClientModule,
+    HttpClientModule, // provider de HttpClient
     SharedModule,
     BrowserModule, // (masque un export de CommonModule qui lui meme export ngIf DatePipe)
     ProductsModule,
     AppRoutingModule,
   ],
-  providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

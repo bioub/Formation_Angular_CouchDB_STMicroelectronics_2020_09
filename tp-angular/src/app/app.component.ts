@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { filter, map, mapTo } from 'rxjs/operators';
 
 @Component({
   selector: 'st-root',
@@ -18,12 +18,19 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // -------(NavigationStart)----(NavigationEnd)-------(NavigationStart)----(NavigationEnd)
+    // filter((event) => event instanceof NavigationEnd)
+    // -------                 ----(NavigationEnd)-------                 ----(NavigationEnd)
+    // mapTo('TEXT')
+    // -------                 ----(    'TEXT'   )-------                 ----(    'TEXT'   )
+
     this.router.events
       .pipe(
-        filter((event) => event instanceof NavigationEnd)
+        filter((event) => event instanceof NavigationEnd),
+        map(() => this.activatedRoute.firstChild.snapshot.data.title)
       )
-      .subscribe(() => {
-        this.title.setTitle(this.activatedRoute.firstChild.snapshot.data.title);
+      .subscribe((title) => {
+        this.title.setTitle(title);
       });
   }
 }

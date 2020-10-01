@@ -1,6 +1,28 @@
-<table>
+<!-- <table *ngIf="products">
   <tr *ngFor="let p of products">
     <td>{{p._id}}</td>
     <td>{{p.name}}</td>
   </tr>
-</table>
+</table> -->
+<ag-grid-angular
+  class="ag-theme-balham"
+  [columnDefs]="columnDefs"
+  [rowData]="products"
+  [defaultColDef]="defaultColDef"
+  [suppressCellSelection]="true"
+  [rowHeight]="40"
+  rowSelection="multiple"
+></ag-grid-angular>
+<!--
+  const rowSelection = 'multiple';
+  const suppressCellSelection = true;
+  const defaultColDef = defaultColDef;
+-->
+
+<p *ngIf="!products">
+  <p-progressSpinner
+    strokeWidth="5"
+    animationDuration="5s"
+    fill="pink"
+  ></p-progressSpinner>
+</p>
